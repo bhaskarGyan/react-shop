@@ -1,0 +1,29 @@
+.shop-item-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.shop-item-heading {
+  font-size: 1.3em;
+  font-weight: 500;
+  margin: 32px 0;
+}
+.shop-item-button {
+  display: inline-block;
+  box-sizing: border-box;
+  border: 2px solid #000;
+  background-color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--app-primary-color);
+  margin: 10px 0;
+  padding: 8px 44px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 0;
+  outline: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}

@@ -1,0 +1,19 @@
+.app-navigation-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 64px;
+}
+.app-navigation-list-item {
+  margin: 0 10px;
+}
+.app-navigation-list-item a:link,
+.app-navigation-list-item a:visited {
+  display: inline-block;
+  outline: none;
+  padding: 9px 5px;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--app-primary-color);
+}

@@ -1,0 +1,26 @@
+.app-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-toolbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+  height: 64px;
+  align-items: center;
+}
+
+.logo a:link,
+.logo a:visited {
+  color: var(--app-primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+}
+.header-cart,
+.header-back-button {
+  width: 40px;
+  padding: 8px;
+  color: var(--app-primary-color);
+}
