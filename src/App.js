@@ -3,6 +3,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Header from './component/Header';
 import Dashboard from './scenes/Dashboard';
+import ItemList from './scenes/ItemList';
+
 import './App.css';
 
 const App = () => {
@@ -10,6 +12,13 @@ const App = () => {
     <div>
       <Header />
       <Route path={`${match.path}dashboard`} exact component={Dashboard} />
+      <Route
+        path={`${match.path}list/:listType`}
+        exact
+        render={props => (
+          <ItemList key={props.match.params.listType} {...props} />
+        )}
+      />
     </div>
   );
   return (

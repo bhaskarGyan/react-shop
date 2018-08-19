@@ -1,0 +1,30 @@
+.shop-list-item-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1;
+  flex-basis: 33%;
+  max-width: 33%;
+}
+.shop-list-item-link {
+  text-decoration: none;
+}
+.shop-list-item {
+  display: flex;
+  flex-direction: column;
+}
+.shop-list-item-image {
+  margin: 32px 0;
+}
+.list-item-name {
+  color: var(--app-primary-color);
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+}
+.list-item-price {
+  color: var(--app-secondary-color);
+  text-align: center;
+  text-decoration: none;
+}

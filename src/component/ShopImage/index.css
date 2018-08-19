@@ -3,6 +3,7 @@
   height: 320px;
   overflow: hidden;
   width: 100%;
+  margin-bottom: 32px;
   --shop-image-img_-_position: absolute;
   --shop-image-img_-_top: 0;
   --shop-image-img_-_bottom: 0;
