@@ -15,7 +15,7 @@ const ShopList = props => {
       </header>
       <ul className="shop-list">
         {listData.map(val => (
-          <ShopListItem currentPath={currentPath} {...val} />
+          <ShopListItem key={val.name} currentPath={currentPath} {...val} />
         ))}
       </ul>
     </article>

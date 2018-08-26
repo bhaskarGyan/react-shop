@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ShoppingCart, KeyboardBackspace } from '@material-ui/icons';
 
+import GlobalContext from '../../context/Global';
 import ShopTabs from '../ShopTabs';
 
 import './index.css';
@@ -13,11 +14,26 @@ const Header = () => (
         <KeyboardBackspace />
       </div>
       <div className="logo">
-        <Link to="/">SHOP</Link>
+        <Link to="/dashboard">SHOP</Link>
       </div>
-      <div className="header-cart">
-        <ShoppingCart />
-      </div>
+      <GlobalContext.Consumer>
+        {({ cart }) => {
+          let cartLength = 0;
+          cart.forEach(val => {
+            cartLength += val.quantity;
+          });
+          return (
+            <Link to="/cart">
+              <div className="header-cart">
+                <ShoppingCart />
+                <div className={cartLength ? 'header-cart-badge' : 'hide'}>
+                  {cartLength}
+                </div>
+              </div>
+            </Link>
+          );
+        }}
+      </GlobalContext.Consumer>
     </section>
     <ShopTabs />
   </header>

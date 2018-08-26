@@ -1,0 +1,11 @@
+.shop-cart-heading {
+  margin: 0 0 4px 0;
+  font-size: 1.3em;
+  font-weight: 500;
+  text-align: center;
+}
+.shop-cart-items-count {
+  color: var(--app-secondary-color);
+  font-size: 12px;
+  text-align: center;
+}
