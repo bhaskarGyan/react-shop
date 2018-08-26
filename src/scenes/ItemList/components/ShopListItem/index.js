@@ -42,7 +42,7 @@ class ShopListItem extends Component {
               />
             </figure>
 
-            <h3 className="list-item-name">{name}</h3>
+            <h3 className="list-item-name">{title}</h3>
             <span className="list-item-price">{`$${price}`}</span>
           </section>
         </Link>

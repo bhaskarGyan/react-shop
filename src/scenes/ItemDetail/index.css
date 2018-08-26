@@ -64,8 +64,23 @@
   }
   .item-img {
     width: 80%;
+    margin: 0 32px;
   }
   .item-details {
     width: 80%;
+  }
+  .add-to-cart {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 64px;
+    z-index: 1;
+    background-color: rgb(23, 44, 80);
+    border: none;
+    color: white;
+    padding: 20px;
+    width: 100%;
+    font-size: 15px;
   }
 }

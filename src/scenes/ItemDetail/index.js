@@ -123,7 +123,11 @@ class ItemDetail extends Component {
               {description}
             </div>
           </section>
-          <ShopButton onClickHandler={this.updateCart} label="Add to Cart" />
+          <ShopButton
+            onClickHandler={this.updateCart}
+            label="Add to Cart"
+            className="add-to-cart"
+          />
         </section>
       </article>
     );

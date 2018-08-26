@@ -3,9 +3,13 @@ import React from 'react';
 import './index.css';
 
 const ShopButton = props => {
-  const { onClickHandler, label } = props;
+  const { onClickHandler, label, className = '' } = props;
   return (
-    <button type="submit" className="shop-button" onClick={onClickHandler}>
+    <button
+      type="submit"
+      className={`${className} shop-button`}
+      onClick={onClickHandler}
+    >
       {label}
     </button>
   );

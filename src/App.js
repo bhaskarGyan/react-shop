@@ -78,9 +78,13 @@ class App extends Component {
           path={`${match.path}detail/:currentList/:currentItem`}
           exact
           render={props => (
-            <GlobalContext.Consumer key={props.match.params.currentItem}>
+            <GlobalContext.Consumer>
               {({ updateCart }) => (
-                <ItemDetail updateCart={updateCart} {...props} />
+                <ItemDetail
+                  key={props.match.params.currentItem}
+                  updateCart={updateCart}
+                  {...props}
+                />
               )}
             </GlobalContext.Consumer>
           )}

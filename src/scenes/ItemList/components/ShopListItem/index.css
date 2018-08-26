@@ -45,6 +45,12 @@
 }
 @media (max-width: 767px) {
   .shop-list-item-wrapper {
-    max-width: 100%;
+    max-width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+    flex-basis: 50%;
+  }
+  .shop-list-item-image {
+    width: 100%;
   }
 }
