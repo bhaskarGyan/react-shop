@@ -1,0 +1,60 @@
+.shop-checkout-details-heading {
+  font-size: 14px;
+  color: var(--app-primary-color);
+  font-weight: 700;
+  width: 100%;
+}
+.shop-checkout-details-left,
+.shop-checkout-details-right {
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.shop-checkout-section-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.shop-checkout-card-expiry {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 20px;
+}
+.shop-checkout-card-expiry-heading {
+  color: var(--app-primary-color);
+  font-size: 12px;
+}
+.checkout-card-expiry-dropdown {
+  flex-grow: 1;
+  flex-basis: 0;
+  margin-right: 14px;
+}
+.checkout-card-expiry-cvv {
+  flex-grow: 1;
+  flex-basis: 0;
+  margin: 0 !important;
+}
+.checkout-card-expiry-cvv > .MuiInput-root-30 {
+  margin-top: 20px;
+}
+.shop-checkout-item-details {
+  width: 100%;
+}
+.shop-checkout-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+.shop-checkout-total-price {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+@media (max-width: 767px) {
+  .shop-checkout-details-left,
+  .shop-checkout-details-right {
+    width: 100%;
+  }
+}

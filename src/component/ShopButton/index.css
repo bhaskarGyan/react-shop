@@ -1,20 +1,4 @@
-.shop-item-navigation {
-  text-decoration: none;
-  color: var(--app-primary-color);
-}
-
-.shop-item-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 40px;
-}
-.shop-item-heading {
-  font-size: 1.3em;
-  font-weight: 500;
-  margin: 32px 0;
-}
-.shop-item-button {
+.shop-button {
   display: inline-block;
   box-sizing: border-box;
   border: 2px solid #000;
@@ -22,7 +6,7 @@
   font-size: 14px;
   font-weight: 500;
   color: var(--app-primary-color);
-  margin: 10px 0;
+  margin: 0;
   padding: 8px 44px;
   text-align: center;
   text-decoration: none;

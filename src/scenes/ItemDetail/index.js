@@ -6,6 +6,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
+import ShopButton from '../../component/ShopButton';
 import { ItemListData } from '../../data';
 
 import './index.css';
@@ -34,13 +35,17 @@ class ItemDetail extends Component {
   };
 
   componentDidMount = () => {
+    window.scrollTo(0, 0);
     const { currentItem, currentList } = this.props.match.params;
-    // const itemDetails = ItemListData;
     const currentItemList = _.filter(ItemListData, { listType: currentList });
     const itemDetails = _.filter(currentItemList[0].listData, {
       name: currentItem,
     });
     this.setState({ itemDetails: itemDetails[0] });
+  };
+
+  onImageLoad = () => {
+    this.setState({ imageLoaded: true });
   };
 
   handleChange = event => {
@@ -60,7 +65,8 @@ class ItemDetail extends Component {
   };
 
   render() {
-    const { name, price, description, largeImage } = this.state.itemDetails;
+    const { imageLoaded, itemDetails } = this.state;
+    const { name, price, description, largeImage } = itemDetails;
     const { classes } = this.props;
     return (
       <article className="item-details-wrappper">
@@ -68,6 +74,8 @@ class ItemDetail extends Component {
           <img
             src={`https://shop.polymer-project.org/es6-unbundled/${largeImage}`}
             alt={name}
+            onLoad={this.onImageLoad}
+            className={imageLoaded ? 'item-img-loaded' : 'item-img-hidden'}
           />
         </section>
         <section className="item-details">
@@ -115,13 +123,7 @@ class ItemDetail extends Component {
               {description}
             </div>
           </section>
-          <button
-            type="submit"
-            className="item-details-add-to-cart"
-            onClick={this.updateCart}
-          >
-            Add to cart
-          </button>
+          <ShopButton onClickHandler={this.updateCart} label="Add to Cart" />
         </section>
       </article>
     );

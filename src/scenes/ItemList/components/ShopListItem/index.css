@@ -14,7 +14,9 @@
   display: flex;
   flex-direction: column;
 }
-
+.shop-list-item-image {
+  opacity: 0;
+}
 .list-item-name {
   color: var(--app-primary-color);
   font-weight: bold;
@@ -34,7 +36,13 @@
   display: block;
   padding-top: 100%;
 }
-
+.list-item-image-wrapper-padding-reset:before {
+  padding-top: 0;
+}
+.shop-list-item-loaded {
+  opacity: 1;
+  transition: opacity 0.5s ease 0s;
+}
 @media (max-width: 767px) {
   .shop-list-item-wrapper {
     max-width: 100%;

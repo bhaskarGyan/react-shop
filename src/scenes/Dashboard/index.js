@@ -9,19 +9,23 @@ import LadiesTshirtImg from '../../images/ladies_tshirts.jpg';
 class Dashboard extends Component {
   state = {};
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     return (
       <article>
         <ShopItem
           imgSrc={MensOuterwareImg}
           imgAlt="Men's Outerware"
-          navigateTo="/list/mens_outerware"
+          navigateTo="/list/mens_outerwear"
           shopItemHeading="Men's Outerware"
         />
         <ShopItem
           imgSrc={LadiesOuterwareImg}
           imgAlt="Ladies Outerware"
-          navigateTo="/list/ladies_outerware"
+          navigateTo="/list/ladies_outerwear"
           shopItemHeading="Ladies Outerware"
         />
         <ShopItem

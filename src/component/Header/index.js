@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ShoppingCart, KeyboardBackspace } from '@material-ui/icons';
+import { ShoppingCart } from '@material-ui/icons';
 
 import GlobalContext from '../../context/Global';
 import ShopTabs from '../ShopTabs';
@@ -10,9 +10,8 @@ import './index.css';
 const Header = () => (
   <header className="app-header">
     <section className="app-toolbar">
-      <div className="header-back-button">
-        <KeyboardBackspace />
-      </div>
+      <div className="header-back-button">{/* <KeyboardBackspace /> */}</div>
+
       <div className="logo">
         <Link to="/dashboard">SHOP</Link>
       </div>

@@ -3,7 +3,7 @@ import React from 'react';
 import './index.css';
 
 const ShopCartItems = props => {
-  const { itemDetails, quantity, size, updateCart } = props;
+  const { itemDetails, quantity, size } = props;
   return (
     <section className="shop-cart-item-wrapper">
       <span>

@@ -9,3 +9,33 @@
   font-size: 12px;
   text-align: center;
 }
+.shop-cart-summary {
+  color: var(--app-primary-color);
+  display: flex;
+  justify-content: center;
+}
+.shop-cart-summary-price {
+  font-weight: bold;
+  text-align: right;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  margin-right: 80px;
+}
+.shop-cart-checkout {
+  display: inline-block;
+  box-sizing: border-box;
+  border: 2px solid #000;
+  background-color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--app-primary-color);
+  margin: 0;
+  padding: 8px 44px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 0;
+  outline: none;
+  -webkit-appearance: none;
+}

@@ -1,4 +1,5 @@
-/*eslint-disable */
+/* eslint react/no-unused-state:0,no-alert:0 */
+
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
@@ -10,6 +11,7 @@ import ItemList from './scenes/ItemList';
 import './App.css';
 import ItemDetail from './scenes/ItemDetail';
 import ShopCart from './scenes/ShopCart';
+import ShopCheckout from './scenes/ShopCheckout';
 
 class App extends Component {
   state = {
@@ -18,22 +20,23 @@ class App extends Component {
       let currentCart = JSON.parse(JSON.stringify(this.state.cart));
       let isUpdatingItem;
       currentCart = currentCart.map(val => {
+        const result = JSON.parse(JSON.stringify(val));
         if (
-          val.itemDetails.name === value.itemDetails.name &&
-          val.size === value.size
+          result.itemDetails.name === value.itemDetails.name &&
+          result.size === value.size
         ) {
-          val.quantity += value.quantity;
+          result.quantity += value.quantity;
           isUpdatingItem = true;
         }
-        return val;
+        return result;
       });
       if (!isUpdatingItem) {
         currentCart.push(value);
       }
       this.setState(
-        () => {
-          return { cart: currentCart };
-        },
+        () => ({
+          cart: currentCart,
+        }),
         () => {
           window.localStorage.setItem(
             'shopCart',
@@ -42,12 +45,20 @@ class App extends Component {
         }
       );
     },
+    checkoutSuccess: () => {
+      this.setState({ cart: [] }, () => {
+        window.localStorage.removeItem('shopCart');
+        alert('SUCCESS');
+      });
+    },
   };
 
   componentDidMount = () => {
     const localStorageCart = window.localStorage.getItem('shopCart');
     if (localStorageCart) {
-      this.setState({ cart: JSON.parse(localStorageCart) });
+      this.setState({
+        cart: JSON.parse(localStorageCart),
+      });
     }
   };
 
@@ -55,7 +66,6 @@ class App extends Component {
     const Layout = ({ match }) => (
       <GlobalContext.Provider value={this.state}>
         <Header />
-
         <Route path={`${match.path}dashboard`} exact component={Dashboard} />
         <Route
           path={`${match.path}list/:listType`}
@@ -81,6 +91,20 @@ class App extends Component {
             <GlobalContext.Consumer>
               {({ cart, updateCart }) => (
                 <ShopCart cart={cart} updateCart={updateCart} {...props} />
+              )}
+            </GlobalContext.Consumer>
+          )}
+        />
+        <Route
+          path={`${match.path}checkout`}
+          render={props => (
+            <GlobalContext.Consumer>
+              {({ cart, checkoutSuccess }) => (
+                <ShopCheckout
+                  cart={cart}
+                  checkoutSuccess={checkoutSuccess}
+                  {...props}
+                />
               )}
             </GlobalContext.Consumer>
           )}
