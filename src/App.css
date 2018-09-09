@@ -1,4 +1,7 @@
 .app-root {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 64px;
   --app-primary-color: rgb(32, 32, 32);
   --app-secondary-color: rgb(117, 117, 117);
 }

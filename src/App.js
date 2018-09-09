@@ -12,6 +12,7 @@ import './App.css';
 import ItemDetail from './scenes/ItemDetail';
 import ShopCart from './scenes/ShopCart';
 import ShopCheckout from './scenes/ShopCheckout';
+import Footer from './component/Footer';
 
 class App extends Component {
   state = {
@@ -113,6 +114,7 @@ class App extends Component {
             </GlobalContext.Consumer>
           )}
         />
+        <Footer />
       </GlobalContext.Provider>
     );
     return (

@@ -74,6 +74,10 @@ class ShopCheckout extends Component {
 
     return (
       <form className={classes.container} noValidate autoComplete="off">
+        <header className="subsection">
+          <h1>Checkout</h1>
+          <span>Shop is a demo app - form data will not be sent</span>
+        </header>
         <div className="shop-checkout-details-left">
           <section className="shop-checkout-section-wrapper">
             <h2 className="shop-checkout-details-heading">
@@ -230,7 +234,10 @@ class ShopCheckout extends Component {
                     const itemPrice = val.quantity * val.itemDetails.price;
                     totalPrice += itemPrice;
                     return (
-                      <div className="shop-checkout-item">
+                      <div
+                        key={val.itemDetails.title}
+                        className="shop-checkout-item"
+                      >
                         <span>{val.itemDetails.title}</span>
                         <span>{`$${itemPrice}`}</span>
                       </div>
